@@ -1,7 +1,6 @@
 from PIL import Image
 import numpy as np
 import matplotlib.pyplot as plt
-import math
 
 def display_image(img):
 # Display a single image
