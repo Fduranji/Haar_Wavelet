@@ -2,7 +2,6 @@ from PIL import Image
 import numpy as np
 import matplotlib.pyplot as plt
 import math
-import time
 
 def display_image(img):
 # Display a single image
@@ -92,7 +91,6 @@ def reverse_haar(front, the_rest, i, power):
 image_chosen = input("Image name: ")
 image_chosen = "images/" + image_chosen
 resolution = int(input("Dimension of image (256, 512, 1024, 2048, etc.): "))
-start = time.time()
 
 images_list = []
 # opens an image
@@ -111,7 +109,7 @@ print("\n")
 print(img)
 # display_image(img)
 images_list.append(img)
-# this gives me a list of length resolution, each index position holds a list of resolution values, so resolution X resolution = 65536 pixels in total
+# this gives me a list of length of dimension given, each index position holds a list of (256, 512, 1024 ...)
 split = list(zip(*[iter(nums)] * resolution))
 print("\nNumber of entries in split: " , len(split))
 
@@ -174,6 +172,4 @@ rev_og = rev_image.reshape(resolution, resolution)
 print(rev_og)
 # display_image(rev_og)
 images_list.append(rev_og)
-end = time.time()
-print(end - start)
 show_images(images_list)
