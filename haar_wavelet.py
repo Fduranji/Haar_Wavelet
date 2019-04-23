@@ -90,7 +90,8 @@ def reverse_haar(front, the_rest, i, power):
 ################################################################################
 
 image_chosen = input("Image name: ")
-resolution = int(input("Resolution of image: "))
+image_chosen = "images/" + image_chosen
+resolution = int(input("Dimension of image (256, 512, 1024, 2048, etc.): "))
 start = time.time()
 
 images_list = []
